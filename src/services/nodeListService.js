@@ -1,4 +1,4 @@
-export default nodeListRecords = [
+const nodeListRecords = [
   {
     id: 1,
     imageColor: "#3e3a39",
@@ -138,3 +138,5 @@ export default nodeListRecords = [
     tag: "PMML",
   },
 ];
+
+export default nodeListRecords;
