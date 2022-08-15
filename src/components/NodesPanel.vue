@@ -1,5 +1,7 @@
 <template>
-  <div>Nodes panel</div>
+  <div id="nodes-panel">
+    <input type="search" placeholder="Add a new node..">
+  </div>
 </template>
 
 <script>
