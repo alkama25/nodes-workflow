@@ -1,28 +1,23 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <nodes-panel></nodes-panel>
+    <workflow-panel></workflow-panel>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import NodesPanel from './components/NodesPanel.vue'
+import WorkflowPanel from './components/WorkflowPanel.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    NodesPanel,
+    WorkflowPanel
   }
 }
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="scss">
+@import "./assets/scss/app.scss";
 </style>
