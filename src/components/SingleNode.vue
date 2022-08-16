@@ -1,15 +1,14 @@
 <template>
-  <div class="single-node">
-    {{nodeDetail.name}}
+  <div class="single-node" @click="$emit('emitNode', nodeDetail)">
+    {{ nodeDetail.name }}
   </div>
 </template>
 
 <script>
 export default {
   props: {
-    nodeDetail: {
-      type: Object,
-    },
+    nodeDetail: Object,
+    emitNode: Function,
   },
 };
 </script>

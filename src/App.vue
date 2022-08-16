@@ -1,21 +1,31 @@
 <template>
   <div id="app">
-    <nodes-panel></nodes-panel>
-    <workflow-panel></workflow-panel>
+    <nodes-panel @insertNode="insertNode"></nodes-panel>
+    <workflow-panel :workflowNodes="workflowNodes"></workflow-panel>
   </div>
 </template>
 
 <script>
-import NodesPanel from './components/NodesPanel.vue'
-import WorkflowPanel from './components/WorkflowPanel.vue'
+import NodesPanel from "./components/NodesPanel.vue";
+import WorkflowPanel from "./components/WorkflowPanel.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
     NodesPanel,
-    WorkflowPanel
-  }
-}
+    WorkflowPanel,
+  },
+  data() {
+    return {
+      workflowNodes: []
+    };
+  },
+  methods: {
+    insertNode(nodeDetail) {
+      this.workflowNodes.push(nodeDetail)
+    },
+  },
+};
 </script>
 
 <style lang="scss">

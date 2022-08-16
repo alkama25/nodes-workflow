@@ -7,7 +7,12 @@
       v-model="searchTerm"
     />
     <div v-if="filterNodes.length">
-      <single-node v-for="nodeItem in filterNodes" :key="nodeItem.id" :nodeDetail="nodeItem"></single-node>
+      <single-node
+        v-for="nodeItem in filterNodes"
+        :key="nodeItem.id"
+        :nodeDetail="nodeItem"
+        @emitNode="emitNodeDetails"
+      ></single-node>
     </div>
   </div>
 </template>
@@ -18,6 +23,9 @@ import SingleNode from "./SingleNode.vue";
 export default {
   components: {
     SingleNode,
+  },
+  props: {
+    insertNode: Function,
   },
   data() {
     return {
@@ -34,6 +42,11 @@ export default {
       } else {
         return [];
       }
+    },
+  },
+  methods: {
+    emitNodeDetails(nodeValue) {
+      this.$emit("insertNode", nodeValue);
     },
   },
 };
