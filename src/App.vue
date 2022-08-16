@@ -1,6 +1,8 @@
 <template>
   <div id="app">
+    <!-- Leeft side section having list of nodes and search input -->
     <nodes-panel @insertNode="insertNode"></nodes-panel>
+    <!-- Right side section representing workflow -->
     <workflow-panel :workflowNodes="workflowNodes"></workflow-panel>
   </div>
 </template>

@@ -1,7 +1,7 @@
 <template>
-  <section>
+  <section class="section">
     <div class="workflow-panel">
-      <div v-for="nodes in workflowNodes" :key="nodes.id" class="node-list">
+      <div v-for="(nodes, index) in workflowNodes" :key="index" class="node-list">
         <p class="node-name">{{nodes.name}}</p>
         <div class="node-block" :style="{ 'background-color': nodes.imageColor }">
           {{ nodes.short_name }}

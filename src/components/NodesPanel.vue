@@ -6,6 +6,7 @@
       @keyup.enter="filterNodes"
       v-model="searchTerm"
     />
+    <!-- Node list from mocked http response -->
     <div v-if="filterNodes.length">
       <single-node
         v-for="nodeItem in filterNodes"
@@ -33,8 +34,9 @@ export default {
     };
   },
   computed: {
+    // Filtered list of nodes on the basis of search query
     filterNodes() {
-      if (this.searchTerm.length) {
+      if (this.searchTerm.length >= 2) {
         let results = nodeListRecords.filter((item) => {
           return item.name.toLowerCase().includes(this.searchTerm.toLowerCase());
         });
